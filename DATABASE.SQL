@@ -37,3 +37,25 @@ CREATE TABLE PAYMENTS (
     subscription_year YEAR NOT NULL,
     FOREIGN KEY (member_id) REFERENCES MEMBERS(id)
 );
+
+
+insert into members ( fullname, email, password, category ) 
+values ("caraline wanja", "caroline@eldohub.co.ke", "jfshjfnsdjn", "gold");
+
+
+insert  into resources(name, size, category) 
+values("knee cap 1", 2, "gear");
+
+
+insert into resource_issuance (resource_id, member_id , status, expected_return_date)
+values(2, 1, "issued","2025-08-02")
+
+
+-- insert five records to payment table
+-- supply atleast five records per table
+
+-- Querying the database  - select statement - conditions, search for patterns
+
+select fullname,email,amount from payments  
+join members on payments.member_id = members.id 
+where status = "fully_paid" ;
